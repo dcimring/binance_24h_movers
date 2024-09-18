@@ -55,7 +55,11 @@ def get_prices():
                 Number of trades in the 24 hour period.
     """
 
-    df = pd.read_json("https://api.binance.com/api/v3/ticker/24hr")
+    url = "https://api.binance.com/api/v3/ticker/24hr"
+    response = requests.get(url)
+    data = response.json()
+    df = pd.DataFrame(data)
+    # df = pd.read_json("https://api.binance.com/api/v3/ticker/24hr")
     return df
 
 @st.cache_data
