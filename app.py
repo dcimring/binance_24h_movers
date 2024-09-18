@@ -5,7 +5,7 @@ from libs.data import get_prices, get_candles
 # use wide layout
 st.set_page_config(layout="wide")
 
-st.header("Binance largest 24h price change")
+st.title("Binance largest 24h price change")
 
 # add css for headers
 st.markdown('''
