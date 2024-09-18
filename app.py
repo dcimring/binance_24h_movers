@@ -5,7 +5,7 @@ from libs.data import get_prices, get_candles
 # use wide layout
 st.set_page_config(layout="wide")
 
-st.header("Binance largest 24h price changes")
+st.header("Binance largest 24h price change")
 
 # add css for headers
 st.markdown('''
@@ -18,7 +18,7 @@ st.markdown('''
 
 # get price changes last 24 hours and sort
 prices = get_prices()
-prices.sort_values(by="priceChange", ascending=False, inplace=True)
+prices.sort_values(by="priceChangePercent", ascending=False, inplace=True)
 prices = prices.iloc[:20]
 symbols = prices['symbol'].tolist()
 
