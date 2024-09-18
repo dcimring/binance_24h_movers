@@ -32,7 +32,7 @@ def plot_candles(data):
 
     data = data.iloc[-st.session_state.count*24:] # most recent 7 days
     colors = ['green' if row['Close'] > row['Open'] else 'red' for index, row in data.iterrows()]
-    fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.7, 0.3], vertical_spacing=0.01)
+    fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.8, 0.2], vertical_spacing=0.01)
 
     fig.update_layout(showlegend=False) # remove summary bar from ployly chart
 
@@ -57,15 +57,16 @@ def plot_candles(data):
     )
 
     fig.update_layout(
-        height=800,  # increase height to 600 pixels
-        width=1200,  # increase width to 800 pixels
+        height=600,  # increase height to 600 pixels
+        width=700,  # increase width to 800 pixels
         xaxis_rangeslider_visible=False,
         # title_text="ETHUSDT",
-        paper_bgcolor='#000000',
-        plot_bgcolor='#000000',
+        paper_bgcolor='#0f1116',
+        plot_bgcolor='#0f1116',
         font_color='white',
         xaxis=dict(gridcolor='lightgrey', gridwidth=1),
-        yaxis=dict(gridcolor='lightgrey',gridwidth=1)
+        yaxis=dict(gridcolor='lightgrey',gridwidth=1),
+        margin=dict(l=20, r=20, t=10, b=20),
     )
 
     return fig
