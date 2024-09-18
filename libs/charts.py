@@ -1,3 +1,4 @@
+import streamlit as st
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
@@ -29,7 +30,7 @@ def plot_candles(data):
         A candlestick chart with volume bars below.
     """
 
-    data = data.iloc[-168:] # most recent 7 days
+    data = data.iloc[-st.session_state.count*24:] # most recent 7 days
     colors = ['green' if row['Close'] > row['Open'] else 'red' for index, row in data.iterrows()]
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.7, 0.3], vertical_spacing=0.01)
 
