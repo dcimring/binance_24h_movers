@@ -58,7 +58,7 @@ def plot_candles(data):
 
     fig.update_layout(
         height=600,  # increase height to 600 pixels
-        width=700,  # increase width to 800 pixels
+        width=1200,  # increase width to 800 pixels
         xaxis_rangeslider_visible=False,
         # title_text="ETHUSDT",
         paper_bgcolor='#0f1116',
